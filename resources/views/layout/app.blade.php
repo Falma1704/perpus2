@@ -21,9 +21,12 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ route('buku.index') }}">Daftar Buku</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item active">                    @foreach($bukus as $buku)
+
                     <a class="nav-link" href="{{ route('buku.edit', ['id' => $buku->id]) }}">Edit</a>
+                    @endforeach
                 </li>
+                
                 <li class="nav-item active">
                     <form action="{{ route('buku.destroy', ['id' => $buku->id]) }}" method="POST">
                         @csrf
